@@ -1,0 +1,9 @@
+---
+###############
+# Point stage_dir to a different locatiom. By default it will reside in the current directory.
+##############
+stage_dir: "{{ lookup('env', 'PWD') }}/stage_dir"
+
+fastapi_tag: latest
+golr_url: http://rdf.geneontology.org/sparql
+sparql_url: http://rdf.geneontology.org/sparql
