@@ -1,10 +1,12 @@
 # GO FASTAPI Production Deployment
 
-This repository enables the deployment of the go-fastapi stack to AWS.
+This repository enables the deployment of the go-fastapi stack to AWS. All the provisioning artifacts are under
+the provision directory. 
 
-## Requirements
+## Requirements. You can use Docker Based Development Environment Described Below. 
 - Terraform. Tested using v1.1.4
 - Ansible. Tested using version 2.10.7
+- go-deploy (pip install go-deploy==0.4.1 # requires python >=3.8)
 
 ## Important ansible files:
     - vars.yaml
@@ -20,7 +22,6 @@ This repository enables the deployment of the go-fastapi stack to AWS.
   - qos.conf and robots.txt for apache mitigation
   - docker-production-compose and various configuration files
 
-- go-deploy (pip install go-deploy==0.4.1 # requires python >=3.8)
 
 ## Development Environment
 
@@ -30,6 +31,7 @@ The instructions in this document are run from the POV that we're working with t
 ```
 docker run --name go-dev -it geneontology/go-devops-base:tools-jammy-0.4.1  /bin/bash
 git clone https://github.com/geneontology/go-fastapi.git
+cd go-fastapi/provision
 ```
 
 
