@@ -69,7 +69,7 @@ Check list:
 # Use the aws cli to make sure you have access to the terraform s3 backend bucket
 
 export AWS_SHARED_CREDENTIALS_FILE=/tmp/go-aws-credentials
-aws s3 ls s3://REPLACE_ME_WITH_TERRAFORM_BACKEND_BUCCKET # S3 bucket
+aws s3 ls s3://REPLACE_ME_WITH_TERRAFORM_BACKEND_BUCKET # S3 bucket
 go-deploy -init --working-directory aws -verbose
 ```
 
@@ -112,7 +112,7 @@ go-deploy --workspace production-YYYY-MM-DD --working-directory aws -verbose --c
 cat production-YYYY-MM-DD.json
 
 # The previous command creates a ansible inventory file.
-cat production-YYYY-MM-DD--inventory.cfg
+cat production-YYYY-MM-DD-inventory.cfg
 
 # Useful terraform commands to check what you have just done
 terraform -chdir=aws workspace show   # current terraform workspace

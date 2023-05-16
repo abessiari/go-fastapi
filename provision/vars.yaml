@@ -4,6 +4,7 @@
 ##############
 stage_dir: "{{ lookup('env', 'PWD') }}/stage_dir"
 
-fastapi_tag: latest
-golr_url: http://rdf.geneontology.org/sparql
+solr_url: http://golr-aux.geneontology.io/solr/
 sparql_url: http://rdf.geneontology.org/sparql
+fastapi_host: REPLACE_ME
+fastapi_host_alias: '{{ fastapi_host }}'
