@@ -146,7 +146,7 @@ go-deploy --workspace production-YYYY-MM-DD --working-directory aws -verbose --c
 
 Check list:
 - [ ] go-fastapi is up and healthy. We use health checks in docker compose file
-- [ ] Use go-fastapi dns name. http://{go-fastapi_host}
+- [ ] Use go-fastapi dns name. http://{go-fastapi_host}/docs
 
 ## Debugging
 
