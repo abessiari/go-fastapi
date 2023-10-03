@@ -4,6 +4,10 @@ ansible --version
 terraform --version
 ls -l /tmp
 
+# Prepare TF backend
+
+s3_terraform_backend=$S3_TF_BACKEND
+sed "s/REPLACE_ME_GOAPI_S3_STATE_STORE/$s3_terraform_backend/g" ./github/backend.tf.sample > aws/backend.tf
 
 # Prepare config yaml files.
 zone_id=`aws route53 list-hosted-zones-by-name --dns-name geneontology.io. --max-items 1  --query "HostedZones[].Id" --output text  | tr "/" " " | awk '{ print $2 }'`
@@ -55,4 +59,5 @@ fi
 
 # Destroy
 go-deploy --working-directory aws -w test-go-deploy-api -destroy -verbose
+rm -f ./github/config-instance.yaml ./github/config-stack.yaml openapi.json
 exit $ret 
